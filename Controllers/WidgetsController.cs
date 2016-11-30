@@ -26,15 +26,13 @@ namespace ConsoleApplication.Controllers
         public IEnumerable<Widget> Get()
         {
             return _context.Widgets.AsEnumerable();
-            //return _context.Widgets.Select(x => x.ToString()).ToArray();
         }
 
         // GET api/values/2
-        [HttpGet("{index}")]
-        public Widget Get(int index)
+        [HttpGet("{id}")]
+        public Widget Get(int id)
         {
-            // FIXME. This finds by index (position in results) and not by ID!
-            return _context.Widgets.Skip(index-1).Take(1).First();
+            return _context.Widgets.FirstOrDefault(w => w.Id == id);
         }
 
         // POST api/values
@@ -47,13 +45,15 @@ namespace ConsoleApplication.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{index}")]
-        public void Delete(int index)
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            // FIXME. This deletes by index (position in results) and not by ID!
-            var valToDelete = _context.Widgets.Skip(index-1).Take(1).First();
-            _context.Widgets.Remove(valToDelete);
-            _context.SaveChanges();
+            var valToDelete = _context.Widgets.FirstOrDefault(w => w.Id == id);
+            // TODO HTTP code 404 when null.
+            if (valToDelete != null) {
+                _context.Widgets.Remove(valToDelete);
+                _context.SaveChanges();
+            }
         }
     }
 }
