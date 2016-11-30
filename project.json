@@ -34,5 +34,8 @@
       },
       "imports": "dnxcore50"
     }
+  },
+  "publishOptions": {
+    "include": [ "appsettings.json", "README.md", "LICENSE" ]
   }
 }
