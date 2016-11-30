@@ -1,9 +1,0 @@
-language: csharp
-mono: none
-dotnet: 1.1.0
-install: 
- - dotnet restore
-script:
- - dotnet build
- - dotnet publish
- - docker build .

@@ -10,6 +10,19 @@ best to adhere to the principles of the 12 factor app.
 * [ASP.NET Configuration](https://github.com/aspnet/Configuration)
 * [12 Factor App](https://12factor.net/)
 
+# TODO
+
+* Use EF Repository
+* Use MSSQL on Linux Container
+* Access and Audit Logging
+* Docker Compose v2 networks
+* Docker files for local dev
+* Document how 12 factors are satisfied.
+* Add port binding without Docker rebuild.
+* Add vscode tasks and run mappings.
+* Simplify and cleanup Docker build.
+* Utilize MSBuild. See [.NET Core MSBUILD](https://docs.microsoft.com/en-us/dotnet/articles/core/tutorials/target-dotnetcore-with-msbuild)
+
 # Files
 
 ## project.json
@@ -58,6 +71,10 @@ Compiled, published, and packaged output from `dotnet build`, `dotnet publish`, 
 If using Visual Studio Code, these files customize the IDE experience for this project.
 
 # Useful Commands
+
+## Build Script
+Compiles and packages with runtime in a Docker image
+`./build.sh`
 
 ## Download dependencies
 `dotnet restore`
