@@ -21,6 +21,7 @@ best to adhere to the principles of the 12 factor app.
 * Add port binding without Docker rebuild.
 * Add vscode tasks and run mappings.
 * Simplify and cleanup Docker build.
+* Add NUnit Test Cases
 * Utilize MSBuild. See [.NET Core MSBUILD](https://docs.microsoft.com/en-us/dotnet/articles/core/tutorials/target-dotnetcore-with-msbuild)
 
 # Files
